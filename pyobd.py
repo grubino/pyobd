@@ -1098,7 +1098,7 @@ class MyApp(wx.App):
         self.SetTopWindow(frame)
 
         frame.Show(True)
-        frame.Maximize(True)
+        frame.SetSize((520, 400))
         self.sensor_control_off() # ??? JURE POLJSAK
 
 
@@ -1515,4 +1515,6 @@ the Free Software Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  0211
 
 
 app = MyApp(0)
+display = wx.Display(0)
+app.SetOutputWindowAttributes(title='Diagnostics', pos=(0,0,), size=display.GetGeometry().GetSize())
 app.MainLoop()
