@@ -286,8 +286,6 @@ class MyApp(wx.App):
                      size=wx.DefaultSize, style=0):
             wx.ListCtrl.__init__(self, parent, id, pos, size, style)
             ListCtrlAutoWidthMixin.__init__(self)
-            self.Show()
-            self.Maximize(True)
 
     class sensorProducer(threading.Thread):
         def __init__(self, _notify_window, portName, SERTIMEOUT, RECONNATTEMPTS, BAUDRATE, FAST, _nb):
@@ -1100,7 +1098,7 @@ class MyApp(wx.App):
         self.SetTopWindow(frame)
 
         frame.Show(True)
-        frame.SetSize((520, 400))
+        frame.Maximize(True)
         self.sensor_control_off() # ??? JURE POLJSAK
 
 
